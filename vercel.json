@@ -7,13 +7,17 @@
         {
             "src": "/(.*)",
             "dest": "api/index.php"
+        },
+        {
+            "src": "/assets(.*)",
+            "dest": "pu/index.php"
         }
     ],
     "env": {
         "APP_NAME": "Laravel Vercel",
         "APP_ENV": "production",
         "APP_DEBUG": "false",
-        "APP_URL": "https://druppa-api.vercel.app/",
+        "APP_URL": "copytrader-gamma.vercel.app",
 
         "APP_CONFIG_CACHE": "/tmp/config.php",
         "APP_EVENTS_CACHE": "/tmp/events.php",
