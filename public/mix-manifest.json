@@ -1,0 +1,11 @@
+{
+    "/assets/plugins/global/plugins.bundle.css": "/assets/plugins/global/plugins.bundle.css",
+    "/assets/plugins/custom/datatables/datatables.bundle.css": "/assets/plugins/custom/datatables/datatables.bundle.css",
+    "/assets/plugins/custom/leaflet/leaflet.bundle.css": "/assets/plugins/custom/leaflet/leaflet.bundle.css",
+    "/assets/plugins/custom/jstree/jstree.bundle.css": "/assets/plugins/custom/jstree/jstree.bundle.css",
+    "/assets/plugins/custom/jkanban/jkanban.bundle.css": "/assets/plugins/custom/jkanban/jkanban.bundle.css",
+    "/assets/plugins/custom/vis-timeline/vis-timeline.bundle.css": "/assets/plugins/custom/vis-timeline/vis-timeline.bundle.css",
+    "/assets/plugins/custom/tiny-slider/tiny-slider.css": "/assets/plugins/custom/tiny-slider/tiny-slider.css",
+    "/assets/plugins/custom/prismjs/prismjs.bundle.css": "/assets/plugins/custom/prismjs/prismjs.bundle.css",
+    "/assets/css/style.bundle.css": "/assets/css/style.bundle.css"
+}
