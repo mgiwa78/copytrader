@@ -5,6 +5,10 @@
     },
     "routes": [
         {
+            "src": "/asstes(.*)",
+            "dest": "assets/"
+        },
+        {
             "src": "/(.*)",
             "dest": "api/index.php"
         }
