@@ -15,6 +15,11 @@ class WhitelabelController extends Controller
     {
         //
     }
+    public function setup()
+    {
+
+        return view('pages.white-label.setup.index');
+    }
 
     /**
      * Show the form for creating a new resource.

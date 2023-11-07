@@ -21,48 +21,32 @@
             data-kt-menu-expand="false"
         >
             <!--begin:Menu item-->
-            <div
-                data-kt-menu-trigger="click"
-                class="menu-item menu-accordion {{ request()->routeIs('dashboard') ? 'here show' : '' }}"
-            >
+            <div class="menu-item">
                 <!--begin:Menu link-->
                 <a
                     class="menu-link {{ request()->routeIs('dashboard') ? 'active' : '' }}"
                     href="{{ route('dashboard') }}"
                 >
-                    <span class="menu-link">
-                        <span class="menu-icon"
-                            >{!! getIcon('element-11', 'fs-2') !!}</span
-                        >
-                        <span class="menu-title">Dashboards</span>
-                    </span>
+                    <span class="menu-icon"
+                        >{!! getIcon('element-11', 'fs-2') !!}</span
+                    >
+                    <span class="menu-title">Dashboard</span>
                 </a>
                 <!--end:Menu link-->
-                <!--begin:Menu sub-->
-
-                <!--end:Menu sub-->
             </div>
 
-            <div
-                data-kt-menu-trigger="click"
-                class="menu-item menu-accordion {{ request()->routeIs('signals') ? 'here show' : '' }}"
-            >
+            <div class="menu-item">
                 <!--begin:Menu link-->
                 <a
                     class="menu-link {{ request()->routeIs('signals') ? 'active' : '' }}"
                     href="{{ route('signals') }}"
                 >
-                    <span class="menu-link">
-                        <span class="menu-icon"
-                            >{!! getIcon('tech-wifi', 'fs-2') !!}</span
-                        >
-                        <span class="menu-title">Signals</span>
-                    </span>
+                    <span class="menu-icon"
+                        >{!! getIcon('rocket', 'fs-2') !!}</span
+                    >
+                    <span class="menu-title">Signals</span>
                 </a>
                 <!--end:Menu link-->
-                <!--begin:Menu sub-->
-
-                <!--end:Menu sub-->
             </div>
 
             <div
@@ -82,7 +66,7 @@
                 <div class="menu-sub menu-sub-accordion">
                     <!--begin:Menu item-->
                     <div class="menu-item">
-                        <!--begin:Menu link-->  
+                        <!--begin:Menu link-->
                         <a
                             class="menu-link {{ request()->routeIs('configurator.accounts') ? 'active' : '' }}"
                             href="{{ route('configurator.accounts') }}"
@@ -99,8 +83,8 @@
                     <div class="menu-item">
                         <!--begin:Menu link-->
                         <a
-                            class="menu-link {{ request()->routeIs('configurator.trade-copier.*') ? 'active' : '' }}"
-                            href="{{ route('configurator.trade-copier.index') }}"
+                            class="menu-link {{ request()->routeIs('configurator.trade-copier') ? 'active' : '' }}"
+                            href="{{ route('configurator.trade-copier') }}"
                         >
                             <span class="menu-bullet">
                                 <span class="bullet bullet-dot"></span>
@@ -114,10 +98,8 @@
                     <div class="menu-item">
                         <!--begin:Menu link-->
                         <a
-                            class="menu-link {{ request()->routeIs('configurator.equity-monitor.*') ? 'active' : '' }}"
-                            href="{{
-                                route('configurator.equity-monitor.index')
-                            }}"
+                            class="menu-link {{ request()->routeIs('configurator.equity-monitor') ? 'active' : '' }}"
+                            href="{{ route('configurator.equity-monitor') }}"
                         >
                             <span class="menu-bullet">
                                 <span class="bullet bullet-dot"></span>
@@ -129,10 +111,8 @@
                     <div class="menu-item">
                         <!--begin:Menu link-->
                         <a
-                            class="menu-link {{ request()->routeIs('configurator.email-alerts.*') ? 'active' : '' }}"
-                            href="{{
-                                route('configurator.email-alerts.index')
-                            }}"
+                            class="menu-link {{ request()->routeIs('configurator.email-alerts') ? 'active' : '' }}"
+                            href="{{ route('configurator.email-alerts') }}"
                         >
                             <span class="menu-bullet">
                                 <span class="bullet bullet-dot"></span>
@@ -146,53 +126,37 @@
                 <!--end:Menu sub-->
             </div>
 
-            <div
-                data-kt-menu-trigger="click"
-                class="menu-item menu-accordion {{ request()->routeIs('analysis') ? 'here show' : '' }}"
-            >
+            <div class="menu-item">
                 <!--begin:Menu link-->
                 <a
                     class="menu-link {{ request()->routeIs('analysis') ? 'active' : '' }}"
                     href="{{ route('analysis') }}"
                 >
-                    <span class="menu-link">
-                        <span class="menu-icon"
-                            >{!! getIcon('graph-4', 'fs-2') !!}</span
-                        >
-                        <span class="menu-title">Analysis</span>
-                    </span>
+                    <span class="menu-icon"
+                        >{!! getIcon('graph-4', 'fs-2') !!}</span
+                    >
+                    <span class="menu-title">Analysis</span>
                 </a>
                 <!--end:Menu link-->
-                <!--begin:Menu sub-->
-
-                <!--end:Menu sub-->
             </div>
-            <div
-                data-kt-menu-trigger="click"
-                class="menu-item menu-accordion {{ request()->routeIs('signal-followers') ? 'here show' : '' }}"
-            >
+            <div class="menu-item">
                 <!--begin:Menu link-->
                 <a
                     class="menu-link {{ request()->routeIs('signal-followers') ? 'active' : '' }}"
                     href="{{ route('signal-followers') }}"
                 >
-                    <span class="menu-link">
-                        <span class="menu-icon"
-                            >{!! getIcon('people', 'fs-2') !!}</span
-                        >
-                        <span class="menu-title">Signal Followers</span>
-                    </span>
+                    <span class="menu-icon"
+                        >{!! getIcon('people', 'fs-2') !!}</span
+                    >
+                    <span class="menu-title">Signal Followers</span>
                 </a>
                 <!--end:Menu link-->
-                <!--begin:Menu sub-->
-
-                <!--end:Menu sub-->
             </div>
 
             <div
                 data-kt-menu-trigger="click"
                 class="menu-item menu-accordion {{ request()->routeIs('signal-provider.*') ? 'here show' : '' }}"
-            >
+                >
                 <!--begin:Menu link-->
                 <span class="menu-link">
                     <span class="menu-icon"
@@ -205,11 +169,12 @@
                 <!--begin:Menu sub-->
                 <div class="menu-sub menu-sub-accordion">
                     <!--begin:Menu item-->
+
                     <div class="menu-item">
                         <!--begin:Menu link-->
                         <a
-                            class="menu-link {{ request()->routeIs('signal-provider.manage.*') ? 'active' : '' }}"
-                            href="{{ route('signal-provider.manage.index') }}"
+                            class="menu-link {{ request()->routeIs('signal-provider.manage') ? 'active' : '' }}"
+                            href="{{ route('signal-provider.manage') }}"
                         >
                             <span class="menu-bullet">
                                 <span class="bullet bullet-dot"></span>
@@ -228,8 +193,8 @@
 
             <div
                 data-kt-menu-trigger="click"
-                class="menu-item menu-accordion {{ request()->routeIs('whitelabel.*') ? 'here show' : '' }}"
-            >
+                class="menu-item menu-accordion {{ request()->routeIs('whitelabel') ? 'here show' : '' }}"
+                 >
                 <!--begin:Menu link-->
                 <span class="menu-link">
                     <span class="menu-icon"
@@ -245,8 +210,8 @@
                     <div class="menu-item">
                         <!--begin:Menu link-->
                         <a
-                            class="menu-link {{ request()->routeIs('whitelabel.setup.*') ? 'active' : '' }}"
-                            href="{{ route('whitelabel.setup.index') }}"
+                            class="menu-link {{ request()->routeIs('whitelabel.setup') ? 'active' : '' }}"
+                            href="{{ route('whitelabel.setup') }}"
                         >
                             <span class="menu-bullet">
                                 <span class="bullet bullet-dot"></span>
@@ -263,67 +228,66 @@
                 <!--end:Menu sub-->
             </div>
 
-        
             <div
                 data-kt-menu-trigger="click"
-                class="menu-item menu-accordion {{ request()->routeIs('whitelabel.*') ? 'here show' : '' }}"
-            >
-            <!--begin:Menu link-->
-            <span class="menu-link">
-                <span class="menu-icon"
-                    >{!! getIcon('question', 'fs-2') !!}</span
-                >
-                <span class="menu-title">Help Center</span>
-                <span class="menu-arrow"></span>
-            </span>
-            <!--end:Menu link-->
-            <!--begin:Menu sub-->
-            <div class="menu-sub menu-sub-accordion">
-                <!--begin:Menu item-->
-                <div class="menu-item">
-                    <!--begin:Menu link-->
-                    <a
-                        class="menu-link {{ request()->routeIs('help-center.knowledge-base.*') ? 'active' : '' }}"
-                        href="{{ route('help-center.knowledge-base.index') }}"
+                class="menu-item menu-accordion {{ request()->routeIs('help-center.*') ? 'here show' : '' }}"
+              >
+                <!--begin:Menu link-->
+                <span class="menu-link">
+                    <span class="menu-icon"
+                        >{!! getIcon('question', 'fs-2') !!}</span
                     >
-                        <span class="menu-bullet">
-                            <span class="bullet bullet-dot"></span>
-                        </span>
-                        <span class="menu-title">Knowledge Base</span>
-                    </a>
-                    <!--end:Menu link-->
+                    <span class="menu-title">Help Center</span>
+                    <span class="menu-arrow"></span>
+                </span>
+                <!--end:Menu link-->
+                <!--begin:Menu sub-->
+                <div class="menu-sub menu-sub-accordion">
+                    <!--begin:Menu item-->
+                    <div class="menu-item">
+                        <!--begin:Menu link-->
+                        <a
+                            class="menu-link {{ request()->routeIs('help-center.knowledge-base') ? 'active' : '' }}"
+                            href="{{ route('help-center.knowledge-base') }}"
+                        >
+                            <span class="menu-bullet">
+                                <span class="bullet bullet-dot"></span>
+                            </span>
+                            <span class="menu-title">Knowledge Base</span>
+                        </a>
+                        <!--end:Menu link-->
+                    </div>
+                    <div class="menu-item">
+                        <!--begin:Menu link-->
+                        <a
+                            class="menu-link {{ request()->routeIs('help-center.faq') ? 'active' : '' }}"
+                            href="{{ route('help-center.faq') }}"
+                        >
+                            <span class="menu-bullet">
+                                <span class="bullet bullet-dot"></span>
+                            </span>
+                            <span class="menu-title">FAQ</span>
+                        </a>
+                        <!--end:Menu link-->
+                    </div>
+                    <div class="menu-item">
+                        <!--begin:Menu link-->
+                        <a
+                            class="menu-link {{ request()->routeIs('help-center.contact-support') ? 'active' : '' }}"
+                            href="{{ route('help-center.contact-support') }}"
+                        >
+                            <span class="menu-bullet">
+                                <span class="bullet bullet-dot"></span>
+                            </span>
+                            <span class="menu-title">Contact Support</span>
+                        </a>
+                        <!--end:Menu link-->
+                    </div>
+                    <!--end:Menu item-->
+                    <!--begin:Menu item-->
+                    <!--end:Menu item-->
                 </div>
-                <div class="menu-item">
-                    <!--begin:Menu link-->
-                    <a
-                        class="menu-link {{ request()->routeIs('help-center.faq.*') ? 'active' : '' }}"
-                        href="{{ route('help-center.faq.index') }}"
-                    >
-                        <span class="menu-bullet">
-                            <span class="bullet bullet-dot"></span>
-                        </span>
-                        <span class="menu-title">FAQ</span>
-                    </a>
-                    <!--end:Menu link-->
-                </div>
-                <div class="menu-item">
-                    <!--begin:Menu link-->
-                    <a
-                        class="menu-link {{ request()->routeIs('help-center.contact-support.*') ? 'active' : '' }}"
-                        href="{{ route('help-center.contact-support.index') }}"
-                    >
-                        <span class="menu-bullet">
-                            <span class="bullet bullet-dot"></span>
-                        </span>
-                        <span class="menu-title">Contact Support</span>
-                    </a>
-                    <!--end:Menu link-->
-                </div>
-                <!--end:Menu item-->
-                <!--begin:Menu item-->
-                <!--end:Menu item-->
             </div>
-        </div>
             <!--end:Menu sub-->
         </div>
         <!--end:Menu item-->

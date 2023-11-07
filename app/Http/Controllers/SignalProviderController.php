@@ -11,9 +11,10 @@ class SignalProviderController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function manage()
     {
-        //
+
+        return view('pages.signal-provider.manage.index');
     }
 
     /**

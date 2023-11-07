@@ -20,24 +20,28 @@ class ConfiguratorController extends Controller
     {
         addVendors(['amcharts', 'amcharts-maps', 'amcharts-stock']);
 
-        return view('pages.signals.index');
+        return view('pages.configurator.accounts.index');
     }
 
 
 
     public function tradeCopier()
     {
-        // Logic for 'trade-copier' route
+        addVendors(['amcharts', 'amcharts-maps', 'amcharts-stock']);
+
+        return view('pages.configurator.trade-copier.index');
     }
 
     public function equityMonitor()
     {
-        // Logic for 'equity-monitor' route
+        addVendors(['amcharts', 'amcharts-maps', 'amcharts-stock']);
+
+        return view('pages.configurator.equity-monitor.index');
     }
 
     public function emailAlerts()
     {
-        // Logic for 'email-alerts' route
+        return view('pages.configurator.email-alerts.index');
     }
 
     /**

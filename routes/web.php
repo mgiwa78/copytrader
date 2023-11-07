@@ -10,6 +10,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HelpCenterController;
 use App\Http\Controllers\SignalController;
 use App\Http\Controllers\SignalFollowersController;
+use App\Http\Controllers\SignalProviderController;
 use App\Http\Controllers\WhitelabelController;
 use App\Models\SignalProvider;
 use Illuminate\Support\Facades\Route;
@@ -31,28 +32,37 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
+    Route::get('/signals', [SignalController::class, 'index'])->name('signals');
 
     Route::name('user-management.')->group(function () {
         Route::resource('/user-management/users', UserManagementController::class);
         Route::resource('/user-management/roles', RoleManagementController::class);
         Route::resource('/user-management/permissions', PermissionManagementController::class);
     });
-    Route::get('/signals', [SignalController::class, 'index'])->name('signals');
+
+    // Route::get('/signals', [SignalController::class, 'index'])->name('signals');
+
     Route::get('/analysis', [AnalysisController::class, 'index'])->name('analysis');
     Route::get('/signal-followers', [SignalFollowersController::class, 'index'])->name('signal-followers');
 
-
-    Route::name('configurator')->group(function () {
-        Route::get('/accounts', [ConfiguratorController::class, 'accounts'])->name('configurator.accounts');
-        // Route::resource('trade-copier', ConfiguratorController::class);
-
-        // Route::resource('equity-monitor', ConfiguratorController::class);
-
-        // Route::resource('email-alerts', ConfiguratorController::class);
+    Route::prefix('configurator')->group(function () {
+        Route::get('accounts', [ConfiguratorController::class, 'accounts'])->name('configurator.accounts');
+        Route::get('trade-copier', [ConfiguratorController::class, 'tradeCopier'])->name('configurator.trade-copier');
+        Route::get('equity-monitor', [ConfiguratorController::class, 'equityMonitor'])->name('configurator.equity-monitor');
+        Route::get('email-alerts', [ConfiguratorController::class, 'emailAlerts'])->name('configurator.email-alerts');
     });
 
-    Route::name('signal-provider.')->group(function () {
-        Route::resource('/signal-provider/manage', SignalProvider::class);
+    // Route::name('configurator')->group(function () {
+    //     Route::get('/accounts', [ConfiguratorController::class, 'accounts'])->name('configurator.accounts');
+    // Route::resource('trade-copier', ConfiguratorController::class);
+
+    // Route::resource('equity-monitor', ConfiguratorController::class);
+
+    // Route::resource('email-alerts', ConfiguratorController::class);
+    // });
+
+    Route::prefix('signal-provider')->group(function () {
+        Route::get('manage', [SignalProviderController::class, 'manage'])->name('signal-provider.manage');
     });
 
     Route::name('user-management.')->group(function () {
@@ -61,14 +71,14 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::resource('/user-management/permissions', PermissionManagementController::class);
     });
 
-    Route::name('whitelabel.')->group(function () {
-        Route::get('/whitelabel/setup', [WhitelabelController::class, 'setup']);
+    Route::prefix('whitelabel')->group(function () {
+        Route::get('setup', [WhitelabelController::class, 'setup'])->name('whitelabel.setup');
     });
 
-    Route::name('help-center.')->group(function () {
-        Route::get('/help-center/knowledge-base', [HelpCenterController::class, 'knowledge-base']);
-        Route::get('/help-center/faq', [HelpCenterController::class, 'faq']);
-        Route::get('/help-center/contact-support', [HelpCenterController::class, 'contact-support']);
+    Route::prefix('help-center')->group(function () {
+        Route::get('knowledge-base', [HelpCenterController::class, 'knowledgeBase'])->name('help-center.knowledge-base');
+        Route::get('faq', [HelpCenterController::class, 'faq'])->name('help-center.faq');
+        Route::get('contact-support', [HelpCenterController::class, 'contactSupport'])->name('help-center.contact-support');
     });
 });
 

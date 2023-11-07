@@ -15,7 +15,21 @@ class HelpCenterController extends Controller
     {
         //
     }
+    public function knowledgeBase()
+    {
 
+        return view('pages.help-center.knowledge-base.index');
+    }
+    public function contactSupport()
+    {
+
+        return view('pages.help-center.contact-support.index');
+    }
+    public function faq()
+    {
+
+        return view('pages.help-center.faq.index');
+    }
     /**
      * Show the form for creating a new resource.
      */
