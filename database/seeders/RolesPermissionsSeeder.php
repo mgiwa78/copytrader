@@ -46,8 +46,7 @@ class RolesPermissionsSeeder extends Seeder
             'support' => [
                 'reporting',
             ],
-            'trial' => [
-            ],
+            'trial' => [],
         ];
 
         foreach ($permissions_by_role['administrator'] as $permission) {
@@ -67,6 +66,5 @@ class RolesPermissionsSeeder extends Seeder
         }
 
         User::find(1)->assignRole('administrator');
-        User::find(2)->assignRole('developer');
     }
 }
