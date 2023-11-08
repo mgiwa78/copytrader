@@ -13,7 +13,8 @@ class SignalFollowersController extends Controller
      */
     public function index()
     {
-        //
+
+        return view('pages.signal-followers.index');
     }
 
     /**

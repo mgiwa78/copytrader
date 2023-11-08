@@ -13,7 +13,7 @@ class AnalysisController extends Controller
      */
     public function index()
     {
-        return view('pages.configurator.analysis.index');
+        return view('pages.analysis.index');
     }
 
     /**
