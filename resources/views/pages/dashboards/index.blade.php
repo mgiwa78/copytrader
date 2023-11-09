@@ -1,297 +1,507 @@
-<x-default-layout>
-    @section('title') Dashboard @endsection @section('breadcrumbs')
-    {{ Breadcrumbs::render('dashboard')
-    }}
-    @endsection
-    <!--begin::Row-->
-    <div class="row g-5 g-xl-10 mb-5 mb-xl-10">
-        <div class="col-8">
-            <!--begin::Accordion-->
-            <div>
-                <h2>Welcome to Social Trader Tools</h2>
-                <div id="">
-                    <div class="">
-                        Before you get stuck into the platform, please take a
-                        few moments to read through the brief introduction of
-                        the core components of the platform. We hope that this
-                        will ease the setup process and get you up in running as
-                        soon as possible.
+<x-default-layout> @section('title') Dashboard @endsection @section('breadcrumbs') {{ Breadcrumbs::render('dashboard')
+    }} @endsection <!--begin::Row--> <!--begin::Engage widget 10-->
+    <div id="kt_app_content" class="app-content flex-column-fluid">
+        <!--begin::Content container-->
+        <div id="kt_app_content_container" class="app-container container-xxl">
+            <!--begin::Row-->
+            <div class="row gy-5 g-xl-10">
+                <!--begin::Col-->
+                <div class="col-sm-6 col-xl-3 mb-xl-10">
+                    <!--begin::Card widget 2-->
+                    <div class="card h-lg-100">
+                        <!--begin::Body-->
+                        <div class="card-body d-flex justify-content-between align-items-start flex-column">
+                            <!--begin::Icon-->
+                            <div class="m-0">
+                                <i class="ki-duotone ki-compass fs-2hx text-gray-600">
+                                    <span class="path1"></span>
+                                    <span class="path2"></span>
+                                </i>
+                            </div>
+                            <!--end::Icon-->
+                            <!--begin::Section-->
+                            <div class="d-flex flex-column my-7">
+                                <!--begin::Number-->
+                                <span class="fw-semibold fs-2x text-gray-800 lh-1 ls-n2">0</span>
+                                <!--end::Number-->
+                                <!--begin::Follower-->
+                                <div class="m-0 mb-5">
+                                    <span class="fw-semibold fs-6 text-gray-400">Accounts Connected</span>
+                                </div>
+
+                                <span class="fw-semibold fs-2x text-gray-800 lh-1 ls-n2">0</span>
+                                <!--end::Number-->
+                                <!--begin::Follower-->
+                                <div class="m-0 mb-5">
+                                    <span class="fw-semibold fs-6 text-gray-400">Accounts Inactive</span>
+                                </div>
+
+                                <span class="fw-semibold fs-2x text-gray-800 lh-1 ls-n2">0</span>
+                                <!--end::Number-->
+                                <!--begin::Follower-->
+                                <div class="m-0 mb-5">
+                                    <span class="fw-semibold fs-6 text-gray-400">Accounts Disconnected</span>
+                                </div>
+                                <!--end::Follower-->
+                            </div>
+                            <!--end::Section-->
+                            <!--begin::Badge-->
+                            <span class="badge badge-light-success fs-base">
+                            <i class="ki-duotone ki-arrow-up fs-5 text-success ms-n1">
+                                <span class="path1"></span>
+                                <span class="path2"></span>
+                            </i>2.1%</span>
+                            <!--end::Badge-->
+                        </div>
+                        <!--end::Body-->
                     </div>
+                    <!--end::Card widget 2-->
                 </div>
+                <!--end::Col-->
+                <!--begin::Col-->
+                <div class="col-sm-6 col-xl-3 mb-xl-10">
+                    <!--begin::Card widget 2-->
+                    <div class="card h-lg-100">
+                        <!--begin::Body-->
+                        <div class="card-body d-flex justify-content-between align-items-start flex-column">
+                            <!--begin::Icon-->
+                            <div class="m-0">
+                                <i class="ki-duotone ki-chart-simple fs-2hx text-gray-600">
+                                    <span class="path1"></span>
+                                    <span class="path2"></span>
+                                    <span class="path3"></span>
+                                    <span class="path4"></span>
+                                </i>
+                            </div>
+                            <!--end::Icon-->
+                            <!--begin::Section-->
+                            <div class="d-flex flex-column my-7">
+                                <!--begin::Number-->
+                                <span class="fw-semibold fs-2x text-gray-800 lh-1 ls-n2">0</span>
+                                <!--end::Number-->
+                                <!--begin::Follower-->
+                                <div class="m-0 mb-5">
+                                    <span class="fw-semibold fs-6 text-gray-400">Total Equity (EUR)</span>
+                                </div>
+
+                                <span class="fw-semibold fs-2x text-gray-800 lh-1 ls-n2">0</span>
+                                <!--end::Number-->
+                                <!--begin::Follower-->
+                                <div class="m-0 mb-5">
+                                    <span class="fw-semibold fs-6 text-gray-400">Total Balance (EUR)</span>
+                                </div>
+
+                                <span class="fw-semibold fs-2x text-gray-800 lh-1 ls-n2">0</span>
+                                <!--end::Number-->
+                                <!--begin::Follower-->
+                                <div class="m-0 mb-5">
+                                    <span class="fw-semibold fs-6 text-gray-400">Monthly PnL (EUR)</span>
+                                </div>
+                                <!--end::Follower-->
+                            </div>
+                            <!--end::Section-->
+                            <!--begin::Badge-->
+                            <span class="badge badge-light-success fs-base">
+                            <i class="ki-duotone ki-arrow-up fs-5 text-success ms-n1">
+                                <span class="path1"></span>
+                                <span class="path2"></span>
+                            </i>2.1%</span>
+                            <!--end::Badge-->
+                        </div>
+                        <!--end::Body-->
+                    </div>
+                    <!--end::Card widget 2-->
+                </div>
+                <!--end::Col-->
+                <!--begin::Col-->
+                <div class="col-sm-6 col-xl-3 mb-xl-10">
+                    <!--begin::Card widget 2-->
+                    <div class="card h-lg-100">
+                        <!--begin::Body-->
+                        <div class="card-body d-flex justify-content-between align-items-start flex-column">
+                            <!--begin::Icon-->
+                            <div class="m-0">
+                                <i class="ki-duotone ki-abstract-39 fs-2hx text-gray-600">
+                                    <span class="path1"></span>
+                                    <span class="path2"></span>
+                                </i>
+                            </div>
+                            <!--end::Icon-->
+                            <!--begin::Section-->
+                            <div class="d-flex flex-column my-7">
+                                <!--begin::Number-->
+                                <span class="fw-semibold fs-2x text-gray-800 lh-1 ls-n2">0</span>
+                                <!--end::Number-->
+                                <!--begin::Follower-->
+                                <div class="m-0 mb-5">
+                                    <span class="fw-semibold fs-6 text-gray-400">Today’s Copied Orders</span>
+                                </div>
+
+                                <span class="fw-semibold fs-2x text-gray-800 lh-1 ls-n2">0</span>
+                                <!--end::Number-->
+                                <!--begin::Follower-->
+                                <div class="m-0 mb-5">
+                                    <span class="fw-semibold fs-6 text-gray-400">Today’s Failed Orders</span>
+                                </div>
+
+                                <span class="fw-semibold fs-2x text-gray-800 lh-1 ls-n2">0</span>
+                                <!--end::Number-->
+                                <!--begin::Follower-->
+                                <div class="m-0 mb-5">
+                                    <span class="fw-semibold fs-6 text-gray-400">Open Trades</span>
+                                </div>
+                                <!--end::Follower-->
+                            </div>
+                            <!--end::Section-->
+                            <!--begin::Badge-->
+                            <span class="badge badge-light-danger fs-base">
+                            <i class="ki-duotone ki-arrow-down fs-5 text-danger ms-n1">
+                                <span class="path1"></span>
+                                <span class="path2"></span>
+                            </i>0.47%</span>
+                            <!--end::Badge-->
+                        </div>
+                        <!--end::Body-->
+                    </div>
+                    <!--end::Card widget 2-->
+                </div>
+                <!--end::Col-->
+                <!--begin::Col-->
+                <div class="col-sm-6 col-xl-3 mb-xl-10">
+                    <!--begin::Card widget 2-->
+                    <div class="card h-lg-100">
+                        <!--begin::Body-->
+                        <div class="card-body d-flex justify-content-between align-items-start flex-column">
+                            <!--begin::Icon-->
+                            <div class="m-0">
+                                <i class="ki-duotone ki-map fs-2hx text-gray-600">
+                                    <span class="path1"></span>
+                                    <span class="path2"></span>
+                                    <span class="path3"></span>
+                                </i>
+                            </div>
+                            <!--end::Icon-->
+                            <!--begin::Section-->
+                            <div class="d-flex flex-column my-7">
+                                <!--begin::Number-->
+                                <span class="fw-semibold fs-2x text-gray-800 lh-1 ls-n2">0</span>
+                                <!--end::Number-->
+                                <!--begin::Follower-->
+                                <div class="m-0 mb-5">
+                                    <span class="fw-semibold fs-6 text-gray-400">Free Plan Accounts</span>
+                                </div>
+
+                                <span class="fw-semibold fs-2x text-gray-800 lh-1 ls-n2">0</span>
+                                <!--end::Number-->
+                                <!--begin::Follower-->
+                                <div class="m-0 mb-5">
+                                    <span class="fw-semibold fs-6 text-gray-400">Flexible Plan Accounts</span>
+                                </div>
+
+                                <span class="fw-semibold fs-2x text-gray-800 lh-1 ls-n2">0</span>
+                                <!--end::Number-->
+                                <!--begin::Follower-->
+                                <div class="m-0 mb-5">
+                                    <span class="fw-semibold fs-6 text-gray-400">Flexible Plan Accounts</span>
+                                </div>
+                                <!--end::Follower-->
+                            </div>
+                            <!--end::Section-->
+                            <!--begin::Badge-->
+                            <span class="badge badge-light-success fs-base">
+                            <i class="ki-duotone ki-arrow-up fs-5 text-success ms-n1">
+                                <span class="path1"></span>
+                                <span class="path2"></span>
+                            </i>2.1%</span>
+                            <!--end::Badge-->
+                        </div>
+                        <!--end::Body-->
+                    </div>
+                    <!--end::Card widget 2-->
+                </div>
+                <!--end::Col-->
+                <!--begin::Col-->
+
             </div>
-            <div class="accordion mt-5" id="kt_accordion_1">
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="kt_accordion_1_header_1">
-                        <button
-                            class="accordion-button fs-4 fw-semibold collapsed"
-                            type="button"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#kt_accordion_1_body_1"
-                            aria-expanded="true"
-                            aria-controls="kt_accordion_1_body_1"
-                        >
-                            Getting help
-                        </button>
-                    </h2>
-                    <div
-                        id="kt_accordion_1_body_1"
-                        class="accordion-collapse collapse"
-                        aria-labelledby="kt_accordion_1_header_1"
-                        data-bs-parent="#kt_accordion_1"
-                    >
-                        <div class="accordion-body">
-                            To get started and learn about how our platform
-                            works you can visit the knowledge base. Here we
-                            provide in-depth explanations and guides on what
-                            each feature is, their purpose and how they work.
-                            <div class="accordion-footer mt-5">
-                                <a
-                                    id="kt_sign_in_submit"
-                                    class="btn btn-primary me-2 flex-shrink-0"
-                                >
-                                    <!--begin::Indicator label-->
-                                    <span
-                                        class="indicator-label"
-                                        data-kt-translate="sign-in-submit"
-                                        >Knowledge Base</span
-                                    >
-                                    <!--end::Indicator label-->
-                                    <!--begin::Indicator progress-->
+            <!--end::Row-->
+            <!--begin::Row-->
+            <div class="card card-flush mt-6 mt-xl-9">
+            <!--begin::Card header-->
+            <div class="card-header mt-5">
+                <!--begin::Card title-->
+                <div class="card-title flex-column">
+                    <h3 class="fw-bold mb-1">Last Copied Orders</h3>
 
-                                    <!--end::Indicator progress-->
-                                </a>
-                            </div>
-                        </div>
-                    </div>
                 </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="kt_accordion_2_header_2">
-                        <button
-                            class="accordion-button fs-4 fw-semibold collapsed"
-                            type="button"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#kt_accordion_2_body_2"
-                            aria-controls="kt_accordion_2_body_2"
-                        >
-                            Accounts
-                        </button>
-                    </h2>
-                    <div
-                        id="kt_accordion_2_body_2"
-                        class="accordion-collapse collapse"
-                        aria-labelledby="kt_accordion_2_header_2"
-                        data-bs-parent="#kt_accordion_2"
-                    >
-                        <div class="accordion-body">
-                            You can add any MT4/5 broker account to the
-                            platform. To add an account, you need to submit your
-                            MT4 login credentials. You can use your main or
-                            investor password depending on the use case. For
-                            example, to receive email alerts you only need the
-                            investor password but to copy trades you need full
-                            trading rights via the main password.
-                            <div class="accordion-footer mt-5">
-                                <a
-                                    id="kt_sign_in_submit"
-                                    class="btn btn-primary me-2 flex-shrink-0"
-                                >
-                                    <!--begin::Indicator label-->
-                                    <span
-                                        class="indicator-label"
-                                        data-kt-translate="sign-in-submit"
-                                        >Go to accounts</span
-                                    >
-                                    <!--end::Indicator label-->
-                                    <!--begin::Indicator progress-->
-
-                                    <!--end::Indicator progress-->
-                                </a>
-                            </div>
-                        </div>
+                <!--begin::Card title-->
+                <!--begin::Card toolbar-->
+                <div class="card-toolbar my-1">
+                    <!--begin::Select-->
+                    <div class="me-6 my-1">
+                        <select id="kt_filter_year" name="year" data-control="select2" data-hide-search="true" class="w-125px form-select form-select-solid form-select-sm">
+                            <option value="All" selected="selected">All time</option>
+                            <option value="thisyear">This year</option>
+                            <option value="thismonth">This month</option>
+                            <option value="lastmonth">Last month</option>
+                            <option value="last90days">Last 90 days</option>
+                        </select>
                     </div>
-                </div>
-                <div class="accordion-item">
-                    <h3 class="accordion-header" id="kt_accordion_3_header_3">
-                        <button
-                            class="accordion-button fs-4 fw-semibold collapsed"
-                            type="button"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#kt_accordion_3_body_3"
-                            aria-controls="kt_accordion_3_body_3"
-                        >
-                            Trade copiers
-                        </button>
-                    </h3>
-                    <div
-                        id="kt_accordion_3_body_3"
-                        class="accordion-collapse collapse"
-                        aria-labelledby="kt_accordion_3_header_3"
-                        data-bs-parent="#kt_accordion_3"
-                    >
-                        <div class="accordion-body">
-                            Any accounts that you add to the platform can be
-                            setup to copy trades from your other accounts or
-                            signals you have access to. You do not have
-                            predefine leads/copy froms or follower/send tos, so
-                            any account can send or receive trades.
-                            <div class="accordion-footer mt-5">
-                                <a
-                                    id="kt_sign_in_submit"
-                                    class="btn btn-primary me-2 flex-shrink-0"
-                                >
-                                    <!--begin::Indicator label-->
-                                    <span
-                                        class="indicator-label"
-                                        data-kt-translate="sign-in-submit"
-                                        >Go to trade copiers</span
-                                    >
-                                    <!--end::Indicator label-->
-                                    <!--begin::Indicator progress-->
-
-                                    <!--end::Indicator progress-->
-                                </a>
-                            </div>
-                        </div>
+                    <!--end::Select-->
+                    <!--begin::Select-->
+                    <div class="me-4 my-1">
+                        <select id="kt_filter_orders" name="orders" data-control="select2" data-hide-search="true" class="w-125px form-select form-select-solid form-select-sm">
+                            <option value="All" selected="selected">All Orders</option>
+                            <option value="Approved">Approved</option>
+                            <option value="Declined">Declined</option>
+                            <option value="In Progress">In Progress</option>
+                            <option value="In Transit">In Transit</option>
+                        </select>
                     </div>
-                </div>
-                <div class="accordion-item">
-                    <h4 class="accordion-header" id="kt_accordion_4_header_4">
-                        <button
-                            class="accordion-button fs-4 fw-semibold collapsed"
-                            type="button"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#kt_accordion_4_body_4"
-                            aria-controls="kt_accordion_4_body_4"
-                        >
-                            Email alerts
-                        </button>
-                    </h4>
-                    <div
-                        id="kt_accordion_4_body_4"
-                        class="accordion-collapse collapse"
-                        aria-labelledby="kt_accordion_4_header_4"
-                        data-bs-parent="#kt_accordion_4"
-                    >
-                        <div class="accordion-body">
-                            Any accounts that you add to the platform or signals
-                            you have access to, can be setup to receive real
-                            time email alerts for trading events on the account.
-                            Trading events can be trade open, trades closes and
-                            more.
-                            <div class="accordion-footer mt-5">
-                                <a
-                                    id="kt_sign_in_submit"
-                                    class="btn btn-primary me-2 flex-shrink-0"
-                                >
-                                    <!--begin::Indicator label-->
-                                    <span
-                                        class="indicator-label"
-                                        data-kt-translate="sign-in-submit"
-                                        >Go to email alerts</span
-                                    >
-                                    <!--end::Indicator label-->
-                                    <!--begin::Indicator progress-->
-
-                                    <!--end::Indicator progress-->
-                                </a>
-                            </div>
-                        </div>
+                    <!--end::Select-->
+                    <!--begin::Search-->
+                    <div class="d-flex align-items-center position-relative my-1">
+                        <i class="ki-duotone ki-magnifier fs-3 position-absolute ms-3">
+                            <span class="path1"></span>
+                            <span class="path2"></span>
+                        </i>
+                        <input type="text" id="kt_filter_search" class="form-control form-control-solid form-select-sm w-150px ps-9" placeholder="Search Order" />
                     </div>
+                    <!--end::Search-->
                 </div>
-                <div class="accordion-item">
-                    <h4 class="accordion-header" id="kt_accordion_5_header_5">
-                        <button
-                            class="accordion-button fs-4 fw-semibold collapsed"
-                            type="button"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#kt_accordion_5_body_5"
-                            aria-controls="kt_accordion_5_body_5"
-                        >
-                            Signals
-                        </button>
-                    </h4>
-                    <div
-                        id="kt_accordion_5_body_5"
-                        class="accordion-collapse collapse"
-                        aria-labelledby="kt_accordion_5_header_5"
-                        data-bs-parent="#kt_accordion_5"
-                    >
-                        <div class="accordion-body">
-                            You can follow trading accounts of other users
-                            either by a manual share or signing up via a signal
-                            page. Depending on your access rights, you can; view
-                            stats, setup email alerts & trade copiers.
-                            <div class="accordion-footer mt-5">
-                                <a
-                                    id="kt_sign_in_submit"
-                                    class="btn btn-primary me-2 flex-shrink-0"
-                                >
-                                    <!--begin::Indicator label-->
-                                    <span
-                                        class="indicator-label"
-                                        data-kt-translate="sign-in-submit"
-                                        >Go to signals</span
-                                    >
-                                    <!--end::Indicator label-->
-                                    <!--begin::Indicator progress-->
-
-                                    <!--end::Indicator progress-->
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h4 class="accordion-header" id="kt_accordion_6_header_6">
-                        <button
-                            class="accordion-button fs-4 fw-semibold collapsed"
-                            type="button"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#kt_accordion_6_body_6"
-                            aria-controls="kt_accordion_6_body_6"
-                        >
-                            Signal providers
-                        </button>
-                    </h4>
-                    <div
-                        id="kt_accordion_6_body_6"
-                        class="accordion-collapse collapse"
-                        aria-labelledby="kt_accordion_6_header_6"
-                        data-bs-parent="#kt_accordion_6"
-                    >
-                        <div class="accordion-body">
-                            You can grant access to your trading account to
-                            other users as a signal provider. Signal providing
-                            can be as simple as letting another user see the
-                            stats page or full blown selling of your signals as
-                            email alerts and/or a trade copiers to other users.
-                            <div class="accordion-footer mt-5">
-                                <a
-                                    id="kt_sign_in_submit"
-                                    class="btn btn-primary me-2 flex-shrink-0"
-                                >
-                                    <!--begin::Indicator label-->
-                                    <span
-                                        class="indicator-label"
-                                        data-kt-translate="sign-in-submit"
-                                        >Go to signal providers</span
-                                    >
-                                    <!--end::Indicator label-->
-                                    <!--begin::Indicator progress-->
-
-                                    <!--end::Indicator progress-->
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <!--begin::Card toolbar-->
             </div>
-            <!--end::Accordion-->
+            <!--end::Card header-->
+            <!--begin::Card body-->
+            <div class="card-body pt-0">
+                <!--begin::Table container-->
+                <div class="table-responsive">
+                    <!--begin::Table-->
+                    <table id="kt_profile_overview_table" class="table table-row-bordered table-row-dashed gy-4 align-middle fw-bold">
+                        <thead class="fs-7 text-gray-400 text-uppercase">
+                            <tr>
+                                <th class="min-w-150px">Date</th>
+                                <th class="min-w-250px">Master</th>
+                                <th class="min-w-90px">Master TKT</th>
+                                <th class="min-w-50px text-end">Side/Action</th>
+                                <th class="min-w-50px text-end">Symbol</th>
+                                <th class="min-w-50px text-end">Size</th>
+                                <th class="min-w-50px text-end">Notional USD</th>
+                                <th class="min-w-50px text-end">Price</th>
+                                <th class="min-w-50px text-end">SL</th>
+                                <th class="min-w-50px text-end">TP</th>
+                                <th class="min-w-50px text-end">Copied On</th>
+                                <th class="min-w-90px">Status</th>
+
+                            </tr>
+                        </thead>
+                        <tbody class="fs-6">
+                            <tr>
+                                <td>
+                                Oct 25, 2023
+                                </td>
+                                <td>Henry Gabriel</td>
+                                <td>$925.00</td>
+                                <td>
+                                    $925.00
+                                </td>
+                                <td>$925.00</td>
+                                <td>$925.00</td>
+                                <td>$925.00</td>
+                                <td>$925.00</td>
+                                <td>$925.00</td>
+                                <td>$925.00</td>
+                                <td>$925.00</td>
+                                <td>
+                                    <span class="badge badge-light-success fw-bold px-4 py-3">Accepted</span>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                    <!--end::Table-->
+                </div>
+                <!--end::Table container-->
+            </div>
+            <!--end::Card body-->
         </div>
-    </div>
-    <!--end::Col-->
-    <!--end::Row-->
 
-    <!--begin::Row-->
-    <!--end::Row-->
-</x-default-layout>
+            <div class="card card-flush mt-6 mt-xl-9">
+            <!--begin::Card header-->
+            <div class="card-header mt-5">
+                <!--begin::Card title-->
+                <div class="card-title flex-column">
+                    <h3 class="fw-bold mb-1">Masters</h3>
+
+                </div>
+                <!--begin::Card title-->
+                <!--begin::Card toolbar-->
+                <div class="card-toolbar my-1">
+                    <!--begin::Select-->
+                    <div class="me-6 my-1">
+                        <select id="kt_filter_year" name="year" data-control="select2" data-hide-search="true" class="w-125px form-select form-select-solid form-select-sm">
+                            <option value="All" selected="selected">All time</option>
+                            <option value="thisyear">This year</option>
+                            <option value="thismonth">This month</option>
+                            <option value="lastmonth">Last month</option>
+                            <option value="last90days">Last 90 days</option>
+                        </select>
+                    </div>
+                    <!--end::Select-->
+                    <!--begin::Select-->
+                    <div class="me-4 my-1">
+                        <select id="kt_filter_orders" name="orders" data-control="select2" data-hide-search="true" class="w-125px form-select form-select-solid form-select-sm">
+                            <option value="All" selected="selected">All Orders</option>
+                            <option value="Approved">Approved</option>
+                            <option value="Declined">Declined</option>
+                            <option value="In Progress">In Progress</option>
+                            <option value="In Transit">In Transit</option>
+                        </select>
+                    </div>
+                    <!--end::Select-->
+                    <!--begin::Search-->
+                    <div class="d-flex align-items-center position-relative my-1">
+                        <i class="ki-duotone ki-magnifier fs-3 position-absolute ms-3">
+                            <span class="path1"></span>
+                            <span class="path2"></span>
+                        </i>
+                        <input type="text" id="kt_filter_search" class="form-control form-control-solid form-select-sm w-150px ps-9" placeholder="Search Order" />
+                    </div>
+                    <!--end::Search-->
+                </div>
+                <!--begin::Card toolbar-->
+            </div>
+            <!--end::Card header-->
+            <!--begin::Card body-->
+            <div class="card-body pt-0">
+                <!--begin::Table container-->
+                <div class="table-responsive">
+                    <!--begin::Table-->
+                    <table id="kt_profile_overview_table" class="table table-row-bordered table-row-dashed gy-4 align-middle fw-bold">
+                        <thead class="fs-7 text-gray-400 text-uppercase">
+                            <tr>
+
+                                <th class="min-w-250px">Account</th>
+                                <th class="min-w-90px">Balance/Credit</th>
+                                <th class="min-w-50px text-end">Free Margin</th>
+                                <th class="min-w-50px text-end">Open Trades</th>
+                                <th class="min-w-50px text-end">Subscription</th>
+                                <th class="min-w-50px text-end">OFF/ON</th>
+                                <th class="min-w-50px text-end">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody class="fs-6">
+                            <tr>
+                                <td>Henry Gabriel</td>
+                                <td>$925.00</td>
+                                <td>
+                                    $925.00
+                                </td>
+                                <td>$925.00</td>
+                                <td>$925.00</td>
+                                <td>$925.00</td>
+
+                                <td>
+                                    <span class="badge badge-light-success fw-bold px-4 py-3">Active</span>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                    <!--end::Table-->
+                </div>
+                <!--end::Table container-->
+            </div>
+            <!--end::Card body-->
+        </div>
+
+        <div class="card card-flush mt-6 mt-xl-9">
+            <!--begin::Card header-->
+            <div class="card-header mt-5">
+                <!--begin::Card title-->
+                <div class="card-title flex-column">
+                    <h3 class="fw-bold mb-1">Slaves</h3>
+
+                </div>
+                <!--begin::Card title-->
+                <!--begin::Card toolbar-->
+                <div class="card-toolbar my-1">
+                    <!--begin::Select-->
+                    <div class="me-6 my-1">
+                        <select id="kt_filter_year" name="year" data-control="select2" data-hide-search="true" class="w-125px form-select form-select-solid form-select-sm">
+                            <option value="All" selected="selected">All time</option>
+                            <option value="thisyear">This year</option>
+                            <option value="thismonth">This month</option>
+                            <option value="lastmonth">Last month</option>
+                            <option value="last90days">Last 90 days</option>
+                        </select>
+                    </div>
+                    <!--end::Select-->
+                    <!--begin::Select-->
+                    <div class="me-4 my-1">
+                        <select id="kt_filter_orders" name="orders" data-control="select2" data-hide-search="true" class="w-125px form-select form-select-solid form-select-sm">
+                            <option value="All" selected="selected">All Orders</option>
+                            <option value="Approved">Approved</option>
+                            <option value="Declined">Declined</option>
+                            <option value="In Progress">In Progress</option>
+                            <option value="In Transit">In Transit</option>
+                        </select>
+                    </div>
+                    <!--end::Select-->
+                    <!--begin::Search-->
+                    <div class="d-flex align-items-center position-relative my-1">
+                        <i class="ki-duotone ki-magnifier fs-3 position-absolute ms-3">
+                            <span class="path1"></span>
+                            <span class="path2"></span>
+                        </i>
+                        <input type="text" id="kt_filter_search" class="form-control form-control-solid form-select-sm w-150px ps-9" placeholder="Search Order" />
+                    </div>
+                    <!--end::Search-->
+                </div>
+                <!--begin::Card toolbar-->
+            </div>
+            <!--end::Card header-->
+            <!--begin::Card body-->
+            <div class="card-body pt-0">
+                <!--begin::Table container-->
+                <div class="table-responsive">
+                    <!--begin::Table-->
+                    <table id="kt_profile_overview_table" class="table table-row-bordered table-row-dashed gy-4 align-middle fw-bold">
+                        <thead class="fs-7 text-gray-400 text-uppercase">
+                            <tr>
+
+                                <th class="min-w-250px">Account</th>
+                                <th class="min-w-90px">Balance/Credit</th>
+                                <th class="min-w-50px text-end">Free Margin</th>
+                                <th class="min-w-50px text-end">Open Trades</th>
+                                <th class="min-w-50px text-end">Subscription</th>
+                                <th class="min-w-50px text-end">OFF/ON</th>
+                                <th class="min-w-50px text-end">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody class="fs-6">
+                            <tr>
+                                <td>Henry Gabriel</td>
+                                <td>$925.00</td>
+                                <td>
+                                    $925.00
+                                </td>
+                                <td>$925.00</td>
+                                <td>$925.00</td>
+                                <td>$925.00</td>
+
+                                <td>
+                                    <span class="badge badge-light-success fw-bold px-4 py-3">Active</span>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                    <!--end::Table-->
+                </div>
+                <!--end::Table container-->
+            </div>
+            <!--end::Card body-->
+        </div>
+
+
+    </x-default-layout>
