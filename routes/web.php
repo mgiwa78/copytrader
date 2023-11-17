@@ -13,6 +13,7 @@ use App\Http\Controllers\SignalFollowersController;
 use App\Http\Controllers\SignalProviderController;
 use App\Http\Controllers\WhitelabelController;
 use App\Models\SignalProvider;
+use App\Http\Controllers\SlaveAccountController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,6 +32,11 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/', [DashboardController::class, 'index']);
 
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+    Route::prefix('dashboard')->group(function () {
+        Route::get('billing', [DashboardController::class, 'billing'])->name('dashboard.billing');
+        Route::get('user-settings', [DashboardController::class, 'user_settings'])->name('dashboard.user-settings');
+    });
 
     Route::get('/signals', [SignalController::class, 'index'])->name('signals');
 
@@ -80,11 +86,17 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::get('faq', [HelpCenterController::class, 'faq'])->name('help-center.faq');
         Route::get('contact-support', [HelpCenterController::class, 'contactSupport'])->name('help-center.contact-support');
     });
+
+    Route::post('/slave-accounts', [SlaveAccountController::class, 'store'])->name('slave-accounts.store');
+    Route::post('/master-accounts', [MasterAccountController::class, 'store'])->name('master-accounts.store');
+
 });
 
 Route::get('/error', function () {
     abort(500);
 });
+
+
 
 Route::get('/auth/redirect/{provider}', [SocialiteController::class, 'redirect']);
 

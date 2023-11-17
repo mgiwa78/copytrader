@@ -8,6 +8,11 @@ var KTModalNewTarget = function () {
 	var form;
 	var modal;
 	var modalEl;
+    var newModalEl;
+    var newForm;
+    var newModal;
+    var newCancelButton;
+    var newSubmitButton;
 
 	// Init form inputs
 	var initForm = function() {
@@ -108,7 +113,7 @@ var KTModalNewTarget = function () {
 					if (status == 'Valid') {
 						submitButton.setAttribute('data-kt-indicator', 'on');
 
-						// Disable button to avoid multiple click 
+						// Disable button to avoid multiple click
 						submitButton.disabled = true;
 
 						setTimeout(function() {
@@ -116,7 +121,7 @@ var KTModalNewTarget = function () {
 
 							// Enable button
 							submitButton.disabled = false;
-							
+
 							// Show success message. For more info check the plugin's official documentation: https://sweetalert2.github.io/
 							Swal.fire({
 								text: "Form has been successfully submitted!",
@@ -133,7 +138,7 @@ var KTModalNewTarget = function () {
 							});
 
 							//form.submit(); // Submit form
-						}, 2000);   						
+						}, 2000);
 					} else {
 						// Show error message.
 						Swal.fire({
@@ -166,8 +171,8 @@ var KTModalNewTarget = function () {
 				}
 			}).then(function (result) {
 				if (result.value) {
-					form.reset(); // Reset form	
-					modal.hide(); // Hide modal				
+					form.reset(); // Reset form
+					modal.hide(); // Hide modal
 				} else if (result.dismiss === 'cancel') {
 					Swal.fire({
 						text: "Your form has not been cancelled!.",
@@ -183,26 +188,59 @@ var KTModalNewTarget = function () {
 		});
 	}
 
-	return {
-		// Public functions
-		init: function () {
-			// Elements
-			modalEl = document.querySelector('#kt_modal_new_target');
+	// return {
+	// 	// Public functions
+	// 	init: function () {
+	// 		// Elements
+	// 		modalEl = document.querySelector('#kt_modal_new_target');
 
-			if (!modalEl) {
-				return;
-			}
+	// 		if (!modalEl) {
+	// 			return;
+	// 		}
 
-			modal = new bootstrap.Modal(modalEl);
+	// 		modal = new bootstrap.Modal(modalEl);
 
-			form = document.querySelector('#kt_modal_new_target_form');
-			submitButton = document.getElementById('kt_modal_new_target_submit');
-			cancelButton = document.getElementById('kt_modal_new_target_cancel');
+	// 		form = document.querySelector('#kt_modal_new_target_form');
+	// 		submitButton = document.getElementById('kt_modal_new_target_submit');
+	// 		cancelButton = document.getElementById('kt_modal_new_target_cancel');
 
-			initForm();
-			handleForm();
-		}
-	};
+	// 		initForm();
+	// 		handleForm();
+	// 	}
+	// };
+    return {
+        // Public functions
+        init: function () {
+            // Elements
+            modalEl = document.querySelector('#kt_modal_new_target');
+            newModalEl = document.querySelector('#kt_modal_new_master   '); // Add this line
+
+            if (!modalEl || !newModalEl) {
+                return;
+            }
+
+            modal = new bootstrap.Modal(modalEl);
+            newModal = new bootstrap.Modal(newModalEl); // Add this line
+
+            form = document.querySelector('#kt_modal_new_target_form');
+            newForm = document.querySelector('#kt_modal_new_master_form'); // Add this line
+            submitButton = document.getElementById('kt_modal_new_target_submit');
+            newSubmitButton = document.getElementById('kt_modal_new_master_submit'); // Add this line
+            cancelButton = document.getElementById('kt_modal_new_target_cancel');
+            newCancelButton = document.getElementById('kt_modal_new_master_cancel');
+
+            initForm();
+            handleForm();
+
+            // // Add event listener for your new modal submit button
+            // newSubmitButton.addEventListener('click', function (e) {
+            //     e.preventDefault();
+
+            //     // Your logic for the new modal submit button
+            //     // You can use the 'newValidator' for form validation if needed
+            // });
+        }
+    };
 }();
 
 // On document ready

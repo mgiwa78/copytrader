@@ -16,6 +16,17 @@ Breadcrumbs::for('dashboard', function (BreadcrumbTrail $trail) {
     $trail->push('Dashboard', route('dashboard'));
 });
 
+Breadcrumbs::for('billing', function (BreadcrumbTrail $trail) {
+    $trail->parent('dashboard');
+    $trail->push('Billing', route('dashboard.billing'));
+});
+
+Breadcrumbs::for('user-settings', function (BreadcrumbTrail $trail) {
+    $trail->parent('dashboard');
+    $trail->push('User Settings', route('dashboard.user-settings'));
+});
+
+
 // Home > Dashboard > User Management
 Breadcrumbs::for('user-management.index', function (BreadcrumbTrail $trail) {
     $trail->parent('dashboard');

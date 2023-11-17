@@ -10,4 +10,18 @@ class DashboardController extends Controller
 
         return view('pages.dashboards.index');
     }
+
+    public function billing()
+    {
+
+
+        return view('pages.dashboards.billing');
+    }
+
+    public function user_settings()
+    {
+
+
+        return view('pages.dashboards.user-settings');
+    }
 }
