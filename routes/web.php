@@ -8,6 +8,8 @@ use App\Http\Controllers\Auth\SocialiteController;
 use App\Http\Controllers\ConfiguratorController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HelpCenterController;
+use App\Http\Controllers\LandingController;
+use App\Http\Controllers\SettingsController;
 use App\Http\Controllers\SignalController;
 use App\Http\Controllers\SignalFollowersController;
 use App\Http\Controllers\SignalProviderController;
@@ -26,9 +28,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/', [LandingController::class, 'index']);
 Route::middleware(['auth', 'verified'])->group(function () {
 
-    Route::get('/', [DashboardController::class, 'index']);
+
 
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
@@ -50,6 +53,20 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::get('trade-copier', [ConfiguratorController::class, 'tradeCopier'])->name('configurator.trade-copier');
         Route::get('equity-monitor', [ConfiguratorController::class, 'equityMonitor'])->name('configurator.equity-monitor');
         Route::get('email-alerts', [ConfiguratorController::class, 'emailAlerts'])->name('configurator.email-alerts');
+    });
+
+
+    Route::prefix('profile-manager')->group(function () {
+        Route::get('billing-address', [SettingsController::class, 'billingAddress'])->name('profile-manager.billing-address');
+        Route::get('profile-settings', [SettingsController::class, 'profileSettings'])->name('profile-manager.profile-settings');
+    });
+
+    Route::prefix('user-settings')->group(function () {
+        Route::get('my-details', [SettingsController::class, 'myDetails'])->name('user-settings.my-details');
+        Route::get('password', [SettingsController::class, 'password'])->name('user-settings.password');
+    });
+    Route::prefix('billing')->group(function () {
+        Route::get('/', [SettingsController::class, 'billing'])->name('billing');
     });
 
     // Route::name('configurator')->group(function () {

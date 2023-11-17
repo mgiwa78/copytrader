@@ -30,13 +30,13 @@
     <!--end::Menu separator-->
     <!--begin::Menu item-->
     <div class="menu-item px-5">
-        <a href="#" class="menu-link px-5">Profile Manager</a>
+        <a  href="{{ route('profile-manager.profile-settings') }}" class="menu-link px-5">Profile Manager</a>
     </div>
     <div class="menu-item px-5">
-        <a href="#" class="menu-link px-5">User Settings</a>
+        <a href="{{ route('user-settings.my-details') }}" class="menu-link px-5">User Settings</a>
     </div>
     <div class="menu-item px-5">
-        <a href="#" class="menu-link px-5">Billing</a>
+        <a href="{{ route('billing') }}" class="menu-link px-5">Billing</a>
     </div>
     <div class="menu-item px-5">
         <a href="#" class="menu-link px-5">Account Usage</a>
