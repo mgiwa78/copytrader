@@ -14,6 +14,7 @@ use App\Http\Controllers\SignalProviderController;
 use App\Http\Controllers\WhitelabelController;
 use App\Models\SignalProvider;
 use App\Http\Controllers\SlaveAccountController;
+use App\Http\Controllers\MasterAccountController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -87,8 +88,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::get('contact-support', [HelpCenterController::class, 'contactSupport'])->name('help-center.contact-support');
     });
 
-    Route::post('/slave-accounts', [SlaveAccountController::class, 'store'])->name('slave-accounts.store');
-    Route::post('/master-accounts', [MasterAccountController::class, 'store'])->name('master-accounts.store');
+    Route::post('/dashboard/slave-account', [SlaveAccountController::class, 'store'])->name('slave-account.store');
+    Route::post('/dashboard/master-account', [MasterAccountController::class, 'store'])->name('master-account.store');
+
 
 });
 

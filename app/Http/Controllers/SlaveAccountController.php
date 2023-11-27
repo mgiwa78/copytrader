@@ -12,16 +12,19 @@ class SlaveAccountController extends Controller
         // Validate the form data
         $request->validate([
             'broker_technology' => 'required',
-            'login_id' => 'required',
+            'account_id' => 'required',
             'password' => 'required',
             'server' => 'required',
             'subscription' => 'required',
         ]);
 
+        $userId = auth()->id();
+
         // Create a new SlaveAccount instance and fill it with the form data
         $slaveAccount = new SlaveAccount;
+        $slaveAccount->user_id = $userId; // Set the user_id
         $slaveAccount->broker_technology = $request->input('broker_technology');
-        $slaveAccount->login_id = $request->input('login_id');
+        $slaveAccount->account_id = $request->input('account_id');
         $slaveAccount->password = bcrypt($request->input('password'));
         $slaveAccount->server = $request->input('server');
         $slaveAccount->subscription = $request->input('subscription');

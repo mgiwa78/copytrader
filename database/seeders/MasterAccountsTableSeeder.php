@@ -20,6 +20,7 @@ class MasterAccountsTableSeeder extends Seeder
             'password' => bcrypt('secretpassword'),
             'server' => 'example-server',
             'subscription' => 1,
+            'broker_technology' => 1,
 
             'created_at' => now(),
             'updated_at' => now(),

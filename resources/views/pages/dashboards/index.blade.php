@@ -34,10 +34,21 @@
                     </span>
                     <!--end::Icon-->
                     <!--begin::Title-->
-                    <div class="flex-grow-1 me-2">
-                        <a href="#" class="fw-bolder text-gray-800 text-hover-primary fs-6" data-bs-toggle="modal" data-bs-target="#kt_modal_new_master">ADD MASTER</a>
+                    @php
+                        $hasMasterAccount = \App\Models\MasterAccount::where('user_id', auth()->id())->exists();
+                    @endphp
 
-                    </div>
+
+                        @if($hasMasterAccount)
+                        <div class="flex-grow-1 me-2">
+                            <p class="fw-bolder text-gray-800 text-hover-success fs-6">MASTER ADDED</p>
+                        </div>
+                        @else
+                        <div class="flex-grow-1 me-2">
+                            <a href="#" class="fw-bolder text-gray-800 text-hover-primary fs-6" data-bs-toggle="modal" data-bs-target="#kt_modal_new_master">ADD MASTER</a>
+                        </div>
+                        @endif
+
                     <!--end::Title-->
                     <!--begin::Lable-->
 
@@ -515,21 +526,37 @@
                             </tr>
                         </thead>
                         <tbody class="fs-6">
-                            <tr>
-                                <td>Henry Gabriel</td>
-                                <td>$925.00</td>
+                        @foreach ($masterAccounts as $masterAccount)
+                        <tr>
+                                <td>{{ $masterAccount->account_name ?: 'Unavailable' }}</td>
+                                <td>${{ $masterAccount->balance ?: 'Unavailable' }}</td>
+                                <td>${{ $masterAccount->free_margin ?: 'Unavailable' }}</td>
+                                <td>${{ $masterAccount->open_trades ?: 'Unavailable' }}</td>
                                 <td>
-                                    $925.00
+                                    @if($masterAccount->subscription == 1)
+                                        Basic
+                                    @elseif($masterAccount->subscription == 2)
+                                        Lifetime
+                                    @else
+                                        Unavailable
+                                    @endif
                                 </td>
-                                <td>$925.00</td>
-                                <td>$925.00</td>
-                                <td>$925.00</td>
+                                <td>${{ $masterAccount->off_on ?: 'Unavailable' }}</td>
 
                                 <td>
+
+
+
+                                    @if($masterAccount->status == 1)
                                     <span class="badge badge-light-success fw-bold px-4 py-3">Active</span>
+                                    @else
+                                    <span class="badge badge-light-danger fw-bold px-4 py-3">Inactive</span>
+                                    @endif
+
+
                                 </td>
                             </tr>
-
+                        @endforeach
                         </tbody>
                     </table>
                     <!--end::Table-->
@@ -604,21 +631,37 @@
                             </tr>
                         </thead>
                         <tbody class="fs-6">
-                            <tr>
-                                <td>Henry Gabriel</td>
-                                <td>$925.00</td>
+                        @foreach ($slaveAccounts as $slaveAccount)
+                        <tr>
+                                <td>{{ $slaveAccount->account_name ?: 'Unavailable' }}</td>
+                                <td>${{ $slaveAccount->balance ?: 'Unavailable' }}</td>
+                                <td>${{ $slaveAccount->free_margin ?: 'Unavailable' }}</td>
+                                <td>${{ $slaveAccount->open_trades ?: 'Unavailable' }}</td>
                                 <td>
-                                    $925.00
+                                    @if($slaveAccount->subscription == 1)
+                                        Basic
+                                    @elseif($slaveAccount->subscription == 2)
+                                        Lifetime
+                                    @else
+                                        Unavailable
+                                    @endif
                                 </td>
-                                <td>$925.00</td>
-                                <td>$925.00</td>
-                                <td>$925.00</td>
+                                <td>${{ $slaveAccount->off_on ?: 'Unavailable' }}</td>
 
                                 <td>
+
+
+
+                                    @if($slaveAccount->status == 1)
                                     <span class="badge badge-light-success fw-bold px-4 py-3">Active</span>
+                                    @else
+                                    <span class="badge badge-light-danger fw-bold px-4 py-3">Inactive</span>
+                                    @endif
+
+
                                 </td>
                             </tr>
-
+                        @endforeach
                         </tbody>
                     </table>
                     <!--end::Table-->
@@ -644,7 +687,8 @@
                     <!--begin::Modal body-->
                     <div class="modal-body scroll-y px-10 px-lg-15 pt-0 pb-15">
                         <!--begin:Form-->
-                        <form id="kt_modal_new_master_form" class="form" action="{{ route('master-accounts.store') }}" method="post">
+                        <form id="kt_modal_new_master_form" class="form" action="{{ route('master-account.store') }}" method="post">
+                            @csrf
                             <!--begin::Heading-->
                             <div class="mb-13 text-center">
                                 <!--begin::Title-->
@@ -673,7 +717,7 @@
                                         <span class="ms-1" data-bs-toggle="tooltip" title="Specify a target name for future usage and reference"></span>
                                     </label>
                                     <!--end::Label-->
-                                    <input type="text" class="form-control form-control-solid" placeholder="Login ID" name="login_id" />
+                                    <input type="text" class="form-control form-control-solid" placeholder="Login ID" name="account_id" />
                                 </div>
                                 <!--end::Input group-->
                                 <!--end::Col-->
@@ -750,7 +794,7 @@
                     <!--begin::Modal body-->
                     <div class="modal-body scroll-y px-10 px-lg-15 pt-0 pb-15">
                         <!--begin:Form-->
-                        <form id="kt_modal_new_slave_form" class="form" action="{{ route('slave-accounts.store') }}" method="post">
+                        <form id="kt_modal_new_slave_form" class="form" action="{{ route('slave-account.store') }}" method="post">
                             @csrf
                             <!--begin::Heading-->
                             <div class="mb-13 text-center">
@@ -780,7 +824,7 @@
                                         <span class="ms-1" data-bs-toggle="tooltip" title="Specify a target name for future usage and reference"></span>
                                     </label>
                                     <!--end::Label-->
-                                    <input type="text" class="form-control form-control-solid" placeholder="Login ID" name="login_id" />
+                                    <input type="text" class="form-control form-control-solid" placeholder="Login ID" name="account_id" />
                                 </div>
                                 <!--end::Input group-->
                                 <!--end::Col-->

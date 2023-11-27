@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('password');
             $table->string('server');
             $table->integer('subscription');
+            $table->integer('broker_technology');
             // Add more columns as needed
             $table->timestamps(); // Adds 'created_at' and 'updated_at' columns
         });
@@ -28,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('master_accounts');
     }
 };
